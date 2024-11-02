@@ -32,13 +32,26 @@
                 <button id="applyButton">신청하기</button>
             </div>
         </div>
-        <div class="section email-input">
+       
+
+        <!-- 이메일 입력 페이지 -->
+        <div class="section email-input" data-anchor="email-input">
             <div class="content-wrapper">
-                <h2>이메일 입력</h2>
-                <input type="email" id="emailInput" placeholder="이메일을 입력하세요" required>
-                <button id="submitEmail">전송하기</button>
+                <div class="project-content">
+                    <h2>이메일이면 충분</h2>
+                    <div class="email-container">
+                        <input type="email" id="emailInput" placeholder="example@example.com" required>
+                        <button id="submitEmail">전송하기</button>
+                    </div>
+                    
+                </div>
+                <div class="project-image">
+                    <img src="images/phone2.png" alt="앱 미리보기" class="phone-mockup">
+                </div>
+                
             </div>
         </div>
+
 
         <!-- 두 번째 페이지: 프로젝트 설명 -->
         <div class="section project-details" data-anchor="project-details">
