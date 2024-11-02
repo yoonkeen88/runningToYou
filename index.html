@@ -1,27 +1,106 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/InertiaPlugin.min.js"></script>
-
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics Scrolling Webpage</title>
+    <title>Running to You</title>
+    <!-- fullPage.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <section class="intro">
-        <!-- 소개 섹션 내용 -->
-        <h1>환영합니다!</h1>
-        <p>스크롤을 내리면 아래로 이동합니다.</p>
-    </section>
-    <section class="details">
-        <!-- 상세 페이지 내용 -->
-        <h2>상세 페이지</h2>
-        <p>스크롤을 통해 넘어온 페이지입니다.</p>
-    </section>
+    <!-- 상단 메뉴 바 -->
+    <nav class="menu">
+        <div class="menu-content">
+            <ul>
+                <li data-menuanchor="intro"><a href="#intro">홈</a></li>
+                <li data-menuanchor="project-details"><a href="#project-details">프로젝트 목차</a></li>
+                <li data-menuanchor="project-details"><a href="#helper-something">프로젝트 소개</a></li>
+                <li data-menuanchor="company-info"><a href="#company-info">회사 정보</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="fullpage">
+        <!-- 첫 번째 페이지: intro 섹션 -->
+        <div class="section intro" data-anchor="intro">
+            <div class="intro-content">
+                <head>Hello?</head>
+                <h1 class="blurred-text">Running to you!</h1>
+                <h2>이젠 같이 뛰어요</h2>
+                <img src="images/logo.png" alt="회사 로고" class="logo">
+                <button id="applyButton">신청하기</button>
+            </div>
+        </div>
+        <div class="section email-input">
+            <div class="content-wrapper">
+                <h2>이메일 입력</h2>
+                <input type="email" id="emailInput" placeholder="이메일을 입력하세요" required>
+                <button id="submitEmail">전송하기</button>
+            </div>
+        </div>
+
+        <!-- 두 번째 페이지: 프로젝트 설명 -->
+        <div class="section project-details" data-anchor="project-details">
+            <div class="content-wrapper">
+                <div class="project-content">
+                    <h2>WHAT PROJECT?</h2>
+                    <div class="chapter">01 프로젝트 소개</div>
+                    <p>핫한 러닝 열풍 <b>Running Crew</b>가<br>부담스러운 사람들을 위한 <b>Project</b></p>
+                    
+                    <div class="chapter">02 프로젝트 배경</div>
+                    <p>러닝에 대한 진입장벽을 낮추고<br>누구나 쉽게 시작할 수 있도록</p>
+                    
+                    <div class="chapter">03 프로젝트 목표</div>
+                    <p>함께 뛰는 즐거움을 느끼며<br>건강한 러닝 문화 만들기</p>
+                </div>
+                
+                <div class="project-image">
+                    <img src="images/phone2.png" alt="앱 미리보기" class="phone-mockup">
+                </div>
+            </div>
+        </div>
+
+        <div class="section project-details">
+            <div class="content-wrapper">
+                <div class="project-content">
+                    <h2><b>혼자라는</b> 막막함은 이제 끝</h2>
+                    
+                </div>
+                
+                <div class="project-image">
+                    <img src="images/phone.png" alt="앱 미리보기" class="phone-mockup">
+                </div>
+            </div>
+        </div>
+
+        <div class="section project-details" data-anchor="helper-something">
+            <div class="content-wrapper">
+                <div class="project-content">
+                    <h2>WHAT SUPPORT?</h2>
+                    <div class="chapter">01 러닝 메이트 매칭!</div>
+                    <p>러닝 메이트 또는 그룹 <b>회비 없는</b><br>나만의 소모임</p>
+                    <div class="chapter">02 러닝 코스 추천</div>
+                    <p>런리니 당신을 위한<br>추천 코스</p>
+                </div>
+                
+                <div class="project-image">
+                    <img src="images/phone.png" alt="앱 미리보기" class="phone-mockup">
+                </div>
+            </div>
+        </div>
+       
+        
+        <!-- 세 번째 페이지: 회사 정보 -->
+        <div class="section company-info" data-anchor="company-info">
+            <h3>회사 정보</h3>
+            <p>회사명: Crazy Space</p>
+            <p>연락처: crazyspace@gamil.com</p>
+        </div>
+    </div>
+
+    <!-- fullPage.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
