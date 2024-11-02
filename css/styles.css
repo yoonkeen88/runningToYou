@@ -103,9 +103,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+
 #applyButton {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
+    padding: 1rem 2rem; /* 패딩을 늘려서 버튼 크기 증가 */
+    font-size: 1rem; /* 글자 크기를 늘려서 버튼 크기 증가 */
+    font-weight: bold;
     background-color: #fff;
     color: #6c5ce7;
     border: none;
@@ -113,6 +115,7 @@
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
 }
+
 
 #applyButton:hover {
     transform: translateY(-3px);
@@ -158,6 +161,7 @@
 
 #submitEmail {
     padding: 1rem 2rem;
+    font-size: 1.5rem;
     background-color: #6c5ce7;
     color: white;
     border: none;
@@ -210,7 +214,7 @@
 }
 
 .phone-mockup {
-    max-width: 400px;
+    max-width: 300px;
     height: auto;
 }
 
@@ -298,3 +302,4 @@
         padding-left: 5%;
     }
 }
+

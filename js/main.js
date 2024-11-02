@@ -1,19 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     new fullpage('#fullpage', {
-        licenseKey: 'YOUR_KEY_HERE', // 무료 버전은 이 줄을 삭제하세요
-        autoScrolling: true,
-        scrollHorizontally: true,
+        anchors: ['intro', 'email-input', 'project-details', 'helper-intro', 'helper-support', 'company-info'],
         navigation: true,
         navigationPosition: 'right',
+        navigationTooltips: ['홈', '이메일 신청', '프로젝트 목차', '프로젝트 소개', '지원 내용', '회사 정보'],
         showActiveTooltip: true,
-        anchors: ['intro', 'email-input', 'project-details', 'company-info'],
-        menu: '.menu nav',
-        css3: true,
         scrollingSpeed: 700,
         fitToSection: true,
-        paddingTop: '70px' // 상단 메뉴의 높이만큼 여백 추가
+        scrollBar: false,
+        responsiveWidth: 768,
+        afterLoad: function(origin, destination, direction) {
+            // 필요한 경우 추가 동작
+        }
     });
-
     document.getElementById("applyButton").onclick = function() {
         // 이메일 입력 섹션으로 스크롤
         fullpage_api.moveTo('email-input');
@@ -24,6 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (validateEmail(email)) {
             const encryptedEmail = encryptEmail(email); // 이메일 암호화 함수 호출
             const jsonData = JSON.stringify({ email: encryptedEmail });
+
+            // 버튼 비활성화
+            const submitButton = document.getElementById("submitEmail");
+            submitButton.disabled = true;
+
+            // 로딩 창 보여주기
+            showLoading();
 
             fetch("https://runningtoyou.com/api/emailsend", { // API 주소 수정
                 method: "POST",
@@ -42,6 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch((error) => {
                 console.error("오류 발생:", error);
                 alert("서버에 오류가 발생했습니다. 다시 시도해주세요.");
+            })
+            .finally(() => {
+                // 로딩 창 숨기기
+                hideLoading();
+                // 버튼 다시 활성화
+                submitButton.disabled = false;
             });
         } else {
             alert("유효한 이메일 주소를 입력해주세요.");
@@ -57,4 +69,29 @@ function validateEmail(email) {
 
 function encryptEmail(email) {
     return btoa(email); // Base64 인코딩으로 해싱
+}
+
+// 로딩 창 보여주기
+function showLoading() {
+    const loadingDiv = document.createElement("div");
+    loadingDiv.id = "loading";
+    loadingDiv.innerText = "잠시만 기다려주세요...";
+    loadingDiv.style.position = "fixed";
+    loadingDiv.style.top = "50%";
+    loadingDiv.style.left = "50%";
+    loadingDiv.style.transform = "translate(-50%, -50%)";
+    loadingDiv.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+    loadingDiv.style.color = "white";
+    loadingDiv.style.padding = "20px";
+    loadingDiv.style.borderRadius = "5px";
+    loadingDiv.style.zIndex = "9999";
+    document.body.appendChild(loadingDiv);
+}
+
+// 로딩 창 숨기기
+function hideLoading() {
+    const loadingDiv = document.getElementById("loading");
+    if (loadingDiv) {
+        loadingDiv.remove();
+    }
 }
