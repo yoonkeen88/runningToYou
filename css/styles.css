@@ -14,8 +14,9 @@
     width: 100%;
     z-index: 1000;
     background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
-    height: 70px;
+    height: 60px;
 }
 
 .menu-content {
@@ -41,36 +42,57 @@
 }
 
 .menu ul li a:hover {
-    color: #007bff;
+    color: #6c5ce7;
 }
 
 /* 섹션 공통 스타일링 */
 .section {
-    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 /* 인트로 섹션 */
 .intro {
     background: linear-gradient(135deg, #6c5ce7, #a8e6cf);
     color: white;
-}
-
-.intro-content {
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+}
+
+.intro-content1 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 2rem;
+    position: relative;
 }
 
-.blurred-text {
-    font-size: 4rem;
+/* Running to you 타이틀 */
+.intro-content1::before {
+    content: "Running to you";
+    position: absolute;
+    top: 100px;
+    left: 40px;
+    font-size: 2.5rem;
+    font-family: Arial;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.intro-left {
+    text-align: center;
+}
+
+.intro-left h1 {
+    font-size: 3.5rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-.intro h2 {
+.intro-left h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .logo {
@@ -97,87 +119,60 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* 이메일 입력 섹션 */
+.email-input {
+    background-color: #f8f9fa;
+}
+
+.content-wrapper {
+    display: flex;
+    max-width: 1800px;
+    margin: 0 auto;
+    height: 100vh;
+    align-items: center;
+}
+
+.project-content {
+    width: 50%;
+    padding-left: 10%;
+}
+
+.email-input h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.email-container {
+    margin-top: 2rem;
+}
+
+#emailInput {
+    padding: 1rem;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+#submitEmail {
+    padding: 1rem 2rem;
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#submitEmail:hover {
+    transform: translateY(-3px);
+}
+
 /* 프로젝트 설명 섹션 */
 .project-details {
     background-color: #f8f9fa;
-    color: #333;
-    padding: 2rem;
-}
-
-.project-details h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #2d3436;
-}
-
-.project-details p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 1rem auto;
-}
-
-/* 회사 정보 섹션 */
-.company-info {
-    background-color: #2d3436;
-    color: white;
-    padding: 2rem;
-}
-
-.company-info h3 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.company-info p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0.5rem 0;
-}
-
-/* fullPage.js 네비게이션 스타일링 */
-#fp-nav ul li a span {
-    background: #fff;
-}
-
-#fp-nav ul li .fp-tooltip {
-    color: #fff;
-}
-
-/* 반응형 디자인 */
-@media (max-width: 768px) {
-    .blurred-text {
-        font-size: 3rem;
-    }
-
-    .intro h2 {
-        font-size: 1.5rem;
-    }
-
-    .menu ul li {
-        margin: 0 1rem;
-    }
-}
-
-/* 프로젝트 설명 섹션 스타일 수정 */
-.project-details {
-    background-color: #f8f9fa;
-    color: #333;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-/* 콘텐츠 좌우 배치 */
-.content-wrapper {
-    display: flex;
-    width: 100%;
-    max-width: 1800px;
-}
-.project-content {
-    width: 50%;
-    text-align: left;
-    padding-left: 10%;
 }
 
 .project-details h2 {
@@ -187,7 +182,7 @@
     color: #2d3436;
 }
 
-.project-details .chapter {
+.chapter {
     font-size: 1.8rem;
     font-weight: 800;
     margin: 1.5rem 0;
@@ -208,10 +203,10 @@
 
 .project-image {
     width: 50%;
-    padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 
 .phone-mockup {
@@ -219,73 +214,87 @@
     height: auto;
 }
 
+/* 회사 정보 섹션 */
+.company-info {
+    background-color: #2d3436;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.company-info h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.company-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 768px) {
-    .project-details {
+    .menu ul {
+        flex-wrap: wrap;
+    }
+
+    .menu ul li {
+        margin: 0 1rem;
+    }
+
+    .intro-content1::before {
+        font-size: 2rem;
+        top: 80px;
+        left: 20px;
+    }
+
+    .intro-left h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro-left h2 {
+        font-size: 1.5rem;
+    }
+
+    .content-wrapper {
         flex-direction: column;
         padding: 2rem 1rem;
     }
 
-    .project-content {
+    .project-content, .project-image {
         width: 100%;
-        padding: 0;
         text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .project-image {
-        width: 100%;
         padding: 1rem;
     }
 
+    .phone-mockup {
+        max-width: 80%;
+    }
+
+    #emailInput {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .email-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* 태블릿 반응형 */
+@media (min-width: 769px) and (max-width: 1024px) {
     .project-details h2 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 
-    .project-details .chapter {
-        font-size: 1.5rem;
+    .phone-mockup {
+        max-width: 300px;
     }
-}
 
-
-/* 이메일 입력 섹션 스타일 */
-.email-input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    background-color: #f8f9fa;
-    color: #333;
-}
-
-.email-input h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-input[type="email"] {
-    margin: 20px 0;
-    padding: 10px;
-    width: 80%;
-    max-width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-button#submitEmail {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    background-color: #6c5ce7;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-button#submitEmail:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    .project-content {
+        padding-left: 5%;
+    }
 }
