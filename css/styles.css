@@ -15,23 +15,41 @@
     z-index: 1000;
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
+    padding: 0.5rem 0; /* 패딩 조정 */
     height: 60px;
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.menu.hidden {
+    display: none; /* 메뉴를 숨김 */
 }
 
 .menu-content {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: space-between; /* 로고와 메뉴 항목 간의 간격 조정 */
+    width: 100%; /* 가로 폭 조정 */
+}
+
+.menu-logo{
+    height: 30px; /* 로고 높이 조정 */
+    min-width: none;
+    margin-left: 10px; /* 왼쪽 여백 추가 */
 }
 
 .menu ul {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end; /* 메뉴 항목을 오른쪽 정렬 */
     list-style: none;
+    margin: 0; /* 기본 마진 제거 */
+    padding: 0; /* 기본 패딩 제거 */
 }
 
 .menu ul li {
-    margin: 0 2rem;
+    margin: 0 2rem; /* 메뉴 항목 간의 간격 설정 */
 }
 
 .menu ul li a {
@@ -45,6 +63,13 @@
     color: #6c5ce7;
 }
 
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .menu {
+        /* 화면 폭이 768px 이하일 때 메뉴 숨김 */
+        display: none; /* 이 라인을 추가하여 메뉴를 숨김 */
+    }
+}
 /* 섹션 공통 스타일링 */
 .section {
     position: relative;
@@ -95,6 +120,14 @@
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
+.intro-left p {
+    font-size: 1rem;
+    
+    margin: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+
 .logo {
     width: 200px;
     height: 200px;
@@ -106,11 +139,12 @@
 
 #applyButton {
     padding: 1rem 2rem; /* 패딩을 늘려서 버튼 크기 증가 */
-    font-size: 1rem; /* 글자 크기를 늘려서 버튼 크기 증가 */
+    font-size: 2rem; /* 글자 크기를 늘려서 버튼 크기 증가 */
     font-weight: bold;
+    margin:2rem;
     background-color: #fff;
     color: #6c5ce7;
-    border: none;
+    border:none;
     border-radius: 30px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -167,6 +201,7 @@
     border: none;
     border-radius: 30px;
     cursor: pointer;
+    margin-top: 10px;
     transition: transform 0.3s;
 }
 

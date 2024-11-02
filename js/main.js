@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     new fullpage('#fullpage', {
         anchors: ['intro', 'email-input', 'project-details', 'helper-intro', 'helper-support', 'company-info'],
