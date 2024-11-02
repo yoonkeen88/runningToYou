@@ -138,7 +138,7 @@
 
 
 #applyButton {
-    padding: 1rem 2rem; /* 패딩을 늘려서 버튼 크기 증가 */
+    padding: 1rem 6rem; /* 패딩을 늘려서 버튼 크기 증가 */
     font-size: 2rem; /* 글자 크기를 늘려서 버튼 크기 증가 */
     font-weight: bold;
     margin:2rem;
@@ -253,6 +253,7 @@
     height: auto;
 }
 
+
 /* 회사 정보 섹션 */
 .company-info {
     background-color: #2d3436;
@@ -270,6 +271,21 @@
     font-size: 1.1rem;
     line-height: 1.6;
     margin: 0.5rem 0;
+}
+
+/* 팀 설명 스타일링 */
+.team-description {
+    text-align: left; /* 좌측 정렬 */
+    max-width: 800px; /* 너비 조정 */
+    margin: 0 auto; /* 중앙 정렬 */
+    padding: 1rem; /* 패딩 추가 */
+    background-color: rgba(255, 255, 255, 0.1); /* 배경색 추가 */
+    border-radius: 10px; /* 모서리 둥글게 */
+}
+
+.team-description h4 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
 /* 반응형 디자인 */
