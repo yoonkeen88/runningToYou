@@ -259,6 +259,10 @@
     max-width: 300px;
     height: auto;
 }
+.phone-image {
+    max-width: 300px;
+    height: auto;
+}
 
 
 /* 회사 정보 섹션 */
@@ -383,10 +387,17 @@
         max-width: 100%;
         text-align: center;
     }
+    .phone-image{
+        height: 120%;
+        padding-bottom: 3rem;
+        max-width: 100%;
+        text-align: center;
+    }
 
     .phone-mockup {
         width: 100%; /* 모바일에서 이미지를 전체의 80% 너비로*/
         max-width: 300px;
+        margin: 1rem;
         height: auto;
         align-items: center;
     }
