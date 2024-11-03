@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
         navigationPosition: 'right',
         navigationTooltips: ['홈', '이메일 신청', '프로젝트 목차', '프로젝트 소개', '지원 내용', '회사 정보'],
         showActiveTooltip: true,
-        scrollingSpeed: 1000, // 스크롤 속도 증가
+        scrollingSpeed: 600, // 스크롤 속도 증가
         fitToSection: true,
         scrollBar: false,
-        touchSensitivity: 8, // 터치 감도 낮춤
+        touchSensitivity: 5, // 터치 감도 낮춤
         normalScrollElementTouchThreshold: 3,
         scrollOverflow: true,
         scrollOverflowOptions: {
