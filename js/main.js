@@ -1,18 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Fullpage.js 설정
     new fullpage('#fullpage', {
         anchors: ['intro', 'email-input', 'project-details', 'helper-intro', 'helper-support', 'company-info'],
         navigation: true,
         navigationPosition: 'right',
         navigationTooltips: ['홈', '이메일 신청', '프로젝트 목차', '프로젝트 소개', '지원 내용', '회사 정보'],
         showActiveTooltip: true,
-        scrollingSpeed: 700,
+        scrollingSpeed: 1000, // 스크롤 속도 증가
         fitToSection: true,
         scrollBar: false,
+        touchSensitivity: 8, // 터치 감도 낮춤
+        normalScrollElementTouchThreshold: 3,
+        scrollOverflow: true,
+        scrollOverflowOptions: {
+            scrollbars: false,
+        },
+        
+        // 연속 스크롤 방지
+        onLeave: function(origin, destination, direction) {
+            // 스크롤 중복 방지
+            if (fullpage_api.getActiveSection().isMoving) {
+                return false;
+            }
+            return true;
+        },
+
+        // 반응형 설정
         responsiveWidth: 768,
-        afterLoad: function(origin, destination, direction) {
-            // 필요한 경우 추가 동작
+        afterResponsive: function(isResponsive) {
+            if (isResponsive) {
+                fullpage_api.setAutoScrolling(true);
+                fullpage_api.setFitToSection(true);
+            }
         }
     });
+
+    // 신청하기 버튼 이벤트
+    document.getElementById("applyButton").onclick = function() {
+        fullpage_api.moveTo('email-input');
+    };
     document.getElementById("applyButton").onclick = function() {
         // 이메일 입력 섹션으로 스크롤
         fullpage_api.moveTo('email-input');
