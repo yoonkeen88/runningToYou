@@ -267,6 +267,7 @@
     color: white;
     text-align: center;
     padding: 4rem 2rem;
+    position: relative;
 }
 
 .company-info h3 {
@@ -377,14 +378,14 @@
     }
 
     .project-image {
-        width: 90%;
+        width: 100%;
         padding: 1rem;
         max-width: 100%;
         text-align: center;
     }
 
     .phone-mockup {
-        width: 90%; /* 모바일에서 이미지를 전체 너비로 */
+        width: 100%; /* 모바일에서 이미지를 전체의 80% 너비로*/
         max-width: 300px;
         height: auto;
         align-items: center;
