@@ -288,7 +288,8 @@
     margin-bottom: 1rem;
 }
 
-/* 반응형 디자인 */
+/* 반응형 디자인 mobile */
+
 @media (max-width: 768px) {
     .menu ul {
         flex-wrap: wrap;
@@ -305,22 +306,55 @@
     }
 
     .intro-left h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
     }
 
     .intro-left h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    #applyButton {
+        padding: 0.8rem 3rem;
         font-size: 1.5rem;
+        margin: 1rem;
     }
 
     .content-wrapper {
-        flex-direction: column;
+        height: auto;
         padding: 2rem 1rem;
     }
+    .project-content {
+        width: 100%;
+        padding-left: 1rem;
+    }
 
-    .project-content, .project-image {
+    .project-details h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .chapter {
+        font-size: 1.4rem;
+        margin: 1rem 0;
+    }
+    .project-details p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0.5rem 0;
+    }
+    .project-content{
         width: 100%;
         text-align: center;
         padding: 1rem;
+    }
+    .project-image {
+        width: 100%;
+        padding: 1rem;
+    }
+    .phone-mockup {
+        max-width: 70%;
+        height: auto;
     }
 
     .phone-mockup {
@@ -329,7 +363,12 @@
 
     #emailInput {
         width: 100%;
+        max-width: 280px;
         margin-bottom: 1rem;
+    }
+    #submitEmail {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.2rem;
     }
 
     .email-container {
