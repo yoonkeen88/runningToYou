@@ -1,8 +1,0 @@
-/* Main CSS file that imports all other CSS files */
-@import 'reset.css';
-@import 'menu.css';
-@import 'intro.css';
-@import 'email.css';
-@import 'project.css';
-@import 'company.css';
-@import 'responsive.css';
